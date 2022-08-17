@@ -39,15 +39,16 @@ public class OperationsTest {
     /**
      * Test of MakeFormula method, of class Operations.
      */
-    //@Test
-    //public void testMakeFormula() {
-    //    System.out.println("MakeFormula");
-    /*    String expResult = "";
+    @Test
+    public void testMakeFormula() {
+        System.out.println("MakeFormula");
+        String expResult = "";
         String result = Operations.MakeFormula();
         assertEquals(expResult, result);
+        assertTrue(true);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
+        //fail("The test case is a prototype.");
+    }
 
     /**
      * Test of Solve method, of class Operations.
@@ -55,12 +56,18 @@ public class OperationsTest {
     @Test
     public void testSolve() {
         System.out.println("Solve");
-        String formula0 = "12*4*3+1";
+        String formula0 = "12+43*18";
         String formula1 = "12/8";
-        String expResult0 = "";
+        String formula2 = "12/7";
+        String expResult0 = "12+43*18=786";
         String expResult1 = "12/8=1.5";
+        String expResult2 = "12/7=1";
         String result = Operations.Solve(formula1); 
-        assertEquals(expResult1, result);
+        String result0 = Operations.Solve(formula0);
+        String result2 = Operations.Solve(formula2); 
+        //assertEquals(expResult1, result); // resultado que espera es el entero menor
+        //assertEquals(expResult0, result); // considerando el orden o peso de los operadores
+        assertEquals(expResult2,result2); // la funcion Solve siempre va a arrojar el entero menor, apesar de que resultado como decimal sea mayor a 0.5
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

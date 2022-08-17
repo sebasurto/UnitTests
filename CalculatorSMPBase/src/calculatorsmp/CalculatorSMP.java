@@ -16,10 +16,12 @@ public class CalculatorSMP {
      */
     public static void main(String[] args) {
 
-        String question = Operations.MakeFormula();
+        /*String question = Operations.MakeFormula();
         System.out.println(question);
         String ret = Operations.Solve(question);
-        System.out.println(ret);
+        System.out.println(ret);*/
+        String str ="12*5";
+        System.out.print("Resultado:"+str.split("\\/")[0]);
     }
     
 }
