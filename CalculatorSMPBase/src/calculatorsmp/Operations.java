@@ -15,14 +15,14 @@ public class Operations {
 
     public static String MakeFormula(){
         System.out.println("git modify");
-        StringBuilder build = new StringBuilder();
-        int count = (int) (Math.random() * 2) + 1; // generate random count
+        StringBuilder build = new StringBuilder(); // number 1, aperador, number 2
+        int count = (int) (Math.random() * 2) + 1; // generate random count 1 a 3 
         int start = 0;
-        int number1 = (int) (Math.random() * 99) + 1;
+        int number1 = (int) (Math.random() * 99) + 1; // 1 a 100
         build.append(number1);
         while (start <= count){
-            int operation = (int) (Math.random() * 3); // generate operator
-            int number2 = (int) (Math.random() * 99) + 1;
+            int operation = (int) (Math.random() * 3); // generate operator 0 a 3
+            int number2 = (int) (Math.random() * 99) + 1; // 1 a 100
             build.append(op[operation]).append(number2);
             start ++;
         }

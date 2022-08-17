@@ -39,15 +39,15 @@ public class OperationsTest {
     /**
      * Test of MakeFormula method, of class Operations.
      */
-    @Test
-    public void testMakeFormula() {
-        System.out.println("MakeFormula");
-        String expResult = "";
+    //@Test
+    //public void testMakeFormula() {
+    //    System.out.println("MakeFormula");
+    /*    String expResult = "";
         String result = Operations.MakeFormula();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
-    }
+    }*/
 
     /**
      * Test of Solve method, of class Operations.
@@ -55,12 +55,14 @@ public class OperationsTest {
     @Test
     public void testSolve() {
         System.out.println("Solve");
-        String formula = "";
-        String expResult = "";
-        String result = Operations.Solve(formula);
-        assertEquals(expResult, result);
+        String formula0 = "12*4*3+1";
+        String formula1 = "12/8";
+        String expResult0 = "";
+        String expResult1 = "12/8=1.5";
+        String result = Operations.Solve(formula1); 
+        assertEquals(expResult1, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }
