@@ -85,12 +85,14 @@ public class OperationsTest {
         String formula0 = "12+43*18";
         String formula1 = "12/8";
         String formula2 = "12/7";
+        String formula3 = "7/12*100"
         String expResult0 = "12+43*18=786";
         String expResult1 = "12/8=1.5";
         String expResult2 = "12/7=1";
         String result = Operations.Solve(formula1); 
         String result0 = Operations.Solve(formula0);
         String result2 = Operations.Solve(formula2); 
+        String result3 = Operations.Solve(formula3); 
         //assertEquals(expResult1, result); // resultado que espera es el entero menor
         //assertEquals(expResult0, result); // considerando el orden o peso de los operadores
         assertEquals(expResult2,result2); // la funcion Solve siempre va a arrojar el entero menor, apesar de que resultado como decimal sea mayor a 0.5
