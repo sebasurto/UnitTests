@@ -4,6 +4,9 @@
  */
 package calculatorsmp;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Stack;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -44,10 +47,33 @@ public class OperationsTest {
         System.out.println("MakeFormula");
         String expResult = "";
         String result = Operations.MakeFormula();
-        assertEquals(expResult, result);
-        assertTrue(true);
+        //assertEquals(expResult, result);
+       // assertTrue(true);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
+        String str = Operations.MakeFormula();
+        String[] arreglo = str.split("");
+        Stack<String> numstack = new Stack();
+        Stack<String> opstack = new Stack();
+        ArrayList<String> numeros = new ArrayList(Arrays.asList("0","1","2","3","4","5","6","7","8","9"));
+        for(int i = 0; i<arreglo.length;i++){
+            String substr = arreglo[i];
+            if(numstack.isEmpty()){
+                numstack.push(substr);
+            }else if(numeros.contains(substr) && numeros.contains(arreglo[i-1])){
+                substr = numstack.pop() + substr;
+                numstack.push(substr);
+            }else if(numeros.contains(substr)){
+                numstack.push(substr);
+            }else{
+                opstack.push(substr);
+            }
+        }
+        assertTrue(numstack.size()>=2 && numstack.size()<=4);
+        assertTrue(opstack.size()>=1 && opstack.size()<=3);
+        assertTrue(numstack.size()-opstack.size() == 1);
+
+
     }
 
     /**
