@@ -85,7 +85,7 @@ public class OperationsTest {
         String formula0 = "12+43*18";
         String formula1 = "12/8";
         String formula2 = "12/7";
-        String formula3 = "7/12*100"
+        String formula3 = "7/12*100";
         String expResult0 = "12+43*18=786";
         String expResult1 = "12/8=1.5";
         String expResult2 = "12/7=1";
